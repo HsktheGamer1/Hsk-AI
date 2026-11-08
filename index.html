@@ -3,103 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HskApps LLC - Enterprise AI Interface</title>
+    <title>HskApps LLC - Enterprise Workspace</title>
+    <!-- Modern Tailwind CSS Styling Engine -->
     <script src="https://tailwindcss.com"></script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.6); }
+        ::-webkit-scrollbar-thumb { background: rgba(56, 189, 248, 0.4); border-radius: 4px; }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans relative overflow-x-hidden">
 
-    <!-- Header Navigation -->
-    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-            <div class="h-8 w-8 bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 rounded-lg shadow-lg shadow-indigo-500/20"></div>
-            <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">HskApps LLC</span>
-        </div>
-        <div class="text-xs bg-slate-800 text-slate-400 px-3 py-1.5 rounded-full border border-slate-700 font-mono">
-            Model: Gemini-2.5-Flash
-        </div>
-    </header>
+    <!-- REAL AI DYNAMIC BACKGROUND DECORATIVE LAYER -->
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-30 mix-blend-screen">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+        <div class="absolute top-[-10%] left-[-10%] w-[50rem] h-[50rem] rounded-full bg-blue-500/10 blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50rem] h-[50rem] rounded-full bg-purple-500/10 blur-[120px]"></div>
+    </div>
 
-    <!-- Main Content Layout -->
-    <main class="flex-1 max-w-4xl w-full mx-auto p-6 flex flex-col justify-between space-y-6">
-        
-        <!-- Setup Configurations Box -->
-        <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl space-y-4">
-            <h2 class="text-sm font-semibold tracking-wider text-slate-400 uppercase">1. API Access Token Verification</h2>
-            <div>
-                <input type="password" id="apiKeyInput" placeholder="Enter your Gemini API Key here..." 
-                       class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono">
-                <p class="text-xs text-slate-500 mt-2">Get a key from Google AI Studio. Your key runs straight from your browser and is never stored on a server.</p>
+    <!-- ======================================================== -->
+    <!-- SCREEN 1: CLOUD SYSTEM CORE INITIALIZATION LAYER -->
+    <!-- ======================================================== -->
+    <div id="setupScreen" class="relative z-10 flex-1 flex items-center justify-center p-4">
+        <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800 p-8 rounded-2xl shadow-2xl max-w-lg w-full space-y-6">
+            <div class="text-center space-y-2">
+                <div class="h-12 w-12 bg-gradient-to-tr from-sky-400 to-indigo-600 rounded-xl mx-auto flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-sky-500/20">HA</div>
+                <h1 class="text-2xl font-bold tracking-tight text-white">HskApps LLC Gateway Boot</h1>
+                <p class="text-xs text-slate-400">Input your native validation keys to mount the secure network wrapper.</p>
             </div>
-        </div>
-
-        <!-- Chat Log Console Display Area -->
-        <div class="flex-1 bg-slate-900/50 border border-slate-800 rounded-2xl p-6 min-h-[300px] overflow-y-auto font-mono text-sm space-y-4" id="chatConsole">
-            <div class="text-slate-500">[System]: HskApps Core Infrastructure Online. Awaiting prompt request...</div>
-        </div>
-
-        <!-- User Core Prompt Query Interface Input Box -->
-        <div class="space-y-3">
-            <div class="flex space-x-3">
-                <input type="text" id="userPromptInput" placeholder="Ask anything, write code, or execute queries..." 
-                       class="flex-1 bg-slate-900 border border-slate-800 rounded-xl p-4 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-all">
-                <button onclick="queryGeminiEngine()" 
-                        class="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-semibold px-6 rounded-xl transition-all duration-150 active:scale-[0.98] shadow-lg shadow-blue-500/10">
-                    Query AI
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Firebase Configuration Parameters Object</label>
+                    <textarea id="firebaseConfigInput" rows="5" placeholder='{\n  "apiKey": "AIzaSy...",\n  "authDomain": "://firebaseapp.com",\n  "projectId": "hskapps-auth"\n}' class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-300 placeholder-slate-600 focus:outline-none focus:border-sky-500 font-mono resize-none"></textarea>
+                    <p class="text-[10px] text-slate-500 mt-1">Paste the configuration parameters object directly from your Firebase Console settings web panel.</p>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Google Gemini API Access Token</label>
+                    <input type="password" id="geminiKeyInput" placeholder="AIzaSy..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-sky-500 font-mono">
+                </div>
+                <button onclick="bootAuthenticationFramework()" class="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold p-3.5 rounded-xl shadow-lg transition text-sm">
+                    Link and Connect Console
                 </button>
             </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Core Interface Scripts Operations Layer -->
-    <script>
-        async function queryGeminiEngine() {
-            const apiKey = document.getElementById('apiKeyInput').value.trim();
-            const prompt = document.getElementById('userPromptInput').value.trim();
-            const consoleBox = document.getElementById('chatConsole');
+    <!-- ======================================================== -->
+    <!-- SCREEN 2: AUTHENTICATION PORTAL (SIGNUP / LOGIN / VERIFICATION) -->
+    <!-- ======================================================== -->
+    <div id="authScreen" class="hidden relative z-10 flex-1 flex items-center justify-center p-4">
+        <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800 p-8 rounded-2xl shadow-2xl max-w-md w-full space-y-6">
+            <div class="flex justify-between border-b border-slate-800 pb-3">
+                <button id="tabLogin" onclick="toggleAuthView('login')" class="text-sm font-bold text-sky-400 border-b-2 border-sky-400 pb-2 flex-1 text-center">Login</button>
+                <button id="tabSignup" onclick="toggleAuthView('signup')" class="text-sm font-bold text-slate-500 pb-2 flex-1 text-center">Create Account</button>
+            </div>
 
-            if (!apiKey) {
-                alert('Please input a valid Gemini API Key to authorize the application engine pipeline connection.');
-                return;
-            }
-            if (!prompt) return;
-
-            // Log User Action to Dashboard View Console Screen
-            consoleBox.innerHTML += `<div class="text-blue-400 mt-2"><span class="text-slate-500">[User]:</span> ${prompt}</div>`;
-            document.getElementById('userPromptInput').value = ''; // clear input field box immediately
-
-            const processingLogId = 'log-' + Date.now();
-            consoleBox.innerHTML += `<div class="text-slate-500 animate-pulse" id="${processingLogId}">[System]: Routing payload sequence to Gemini-2.5-Flash cluster...</div>`;
-            consoleBox.scrollTop = consoleBox.scrollHeight;
-
-            try {
-                // Official Modern Gemini Developers Production Endpoints Architecture Pipeline
-                const gatewayUrl = `https://googleapis.com{apiKey}`;
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Corporate Email Address</label>
+                    <input type="email" id="userEmail" placeholder="name@hskapps.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-sky-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Secure Password</label>
+                    <input type="password" id="userPassword" placeholder="••••••••" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-sky-500">
+                </div>
                 
-                const queryPayload = {
-                    contents: [{ parts: [{ text: prompt }] }]
-                };
+                <!-- Expanded Interface Node for Phone Registration Layout Matrix -->
+                <div id="phoneInputWrapper" class="hidden space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Phone Number (Include country code)</label>
+                        <input type="text" id="userPhone" placeholder="+1234567890" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-sky-500 font-mono">
+                    </div>
+                    <!-- Recaptcha Target Safety Anchor -->
+                    <div id="recaptcha-container" class="my-2"></div>
+                </div>
 
-                const response = await fetch(gatewayUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(queryPayload)
-                });
+                <div id="authNoticeLog" class="hidden text-xs bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 p-3 rounded-xl font-mono leading-relaxed"></div>
 
-                const data = await response.json();
-                document.getElementById(processingLogId).remove(); // Clear processing placeholder string state
+                <button id="submitActionBtn" onclick="handleAuthSubmission()" class="w-full bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold p-3.5 rounded-xl shadow-lg transition text-sm">
+                    Execute Secure Login
+                </button>
+            </div>
+        </div>
+    </div>
 
-                if (data.candidates && data.candidates[0].content.parts[0].text) {
-                    const aiResponseText = data.candidates[0].content.parts[0].text;
-                    consoleBox.innerHTML += `<div class="text-emerald-400 mt-2 whitespace-pre-wrap"><span class="text-slate-500">[Gemini]:</span> ${aiResponseText}</div>`;
-                } else {
-                    consoleBox.innerHTML += `<div class="text-red-400 mt-2">[Error]: API format execution mismatch or rejected parameters layout configuration.</div>`;
-                }
-            } catch (networkError) {
-                document.getElementById(processingLogId).remove();
-                consoleBox.innerHTML += `<div class="text-red-400 mt-2">[Fatal Network Fault]: Could not establish communication pipeline layer with Google clusters. Check key.</div>`;
-            }
-            consoleBox.scrollTop = consoleBox.scrollHeight;
-        }
-    </script>
-</body>
-</html>
+    <!-- ======================================================== -->
+    <!-- SCREEN 3: HIGH-PERFORMANCE INTELLIGENCE CONTROL WORKSPACE -->
+    <!-- ======================================================== -->
+    <div id="appScreen" class="hidden relative z-10 flex-1 flex flex-col min-h-screen">
+        <header class="border-b border-slate-800/80 bg-slate-900/40 backdrop-blur-md px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="h-9 w-9 bg-gradient-to-tr from-sky-400 via-blue-500 to-indigo-600 rounded-xl shadow-lg flex items-center justify-center font-bold text-white text-sm">HA</div>
+                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">HskApps LLC Console</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                user@hskapps.com</div>
+                <button onclick="terminateUserSession()" class="text-xs text-red-400 hover:text-red-300 font-medium">Disconnect</button>
+            </div>
+        </header>
+
+        <main class="flex-1 max-w-4xl w-full mx-auto p-4 md:p-6 flex flex-col justify-between space-y-4">
+            <!-- Terminal Output System Canvas Window -->
+            <div class="flex-1 bg-slate-950/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-6 min-h-[400px] overflow-y-auto text-sm space-y-4 shadow-inner" id="chatConsoleView">
+                <div class="flex space-x-3 items-start opacity-70">
+                    <div class="bg-slate-800 text-slate-400 px-2 py-0.5 rounded text-xs font-mono mt-0.5">SYSTEM</div>
+                    <div class="font-mono text-slate-400">Cryptographic handshake complete. Core infrastructure links online. Awaiting query vector payload inputs...</div>
+                </div>
+            </div>
+
+            <!-- Terminal Messaging Input Frame Box -->
+            <div class="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-3 rounded-2xl shadow-xl">
+                <div class="flex space-x-2 md:space-x-3">
+                    <input type="text" id="aiQueryInput" placeholder="Issue calculation instructions straight to Gemini engine cluster nodes..." onkeydown="if(event.key === 'Enter') submitQueryToGemini()" class="flex-1 bg-slate-950/80 border border-slate-800 rounded-xl p-4 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-all text-sm">
+                    <button onclick="submitQueryToGemini()" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold px-6 rounded-xl transition shadow-lg shadow-sky-500/10 text-sm">Query AI</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- MODULE MODULE CONTROLS ARCHITECTURE ROUTINES -->
+    <!-- ======================================================== -->
+    <script type="module">
